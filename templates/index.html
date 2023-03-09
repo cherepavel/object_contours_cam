@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <title>Вывод картинки с подписью</title>
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1"><img src="/static/img/rguk.logo.svg" class="d-inline-block align-text-top"></span>
+    </div>
+  </nav>
+</head>
+<body>
+<!-- div с карточками -->
+
+<div class="card-group">
+    <div class="card">
+      <!-- <img src="/static/img/canny.jpg" class="card-img-top" alt="..."> -->
+      <img id="image_canny" class="card-img-top" alt="..." src="{{ url_for('get_image1') }}" />
+      <div class="card-body">
+        <h5 class="card-title">Метод Canny</h5>
+        <p class="card-text">Детектор краев Canny принимает изображение в градациях серого в качестве входных данных и создает изображение, показывающее местоположение разрывов интенсивности в качестве выходных данных.</p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+
+    <div class="card">
+        <img id="image_laplass" class="card-img-top" alt="..." src="{{ url_for('get_image2') }}" />
+      <div class="card-body">
+        <h5 class="card-title">Метод Лапласс</h5>
+        <p class="card-text">Оператор Лапласа используется для поиска ребер в изображении. Это производная маска второго порядка. В этой маске у нас есть еще две классификации: одна – положительный оператор Лапласа, а другая – отрицательный оператор Лапласа.</p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+
+    <div class="card">
+        <img id="image_sharra" class="card-img-top" alt="..." src="{{ url_for('get_image3') }}" />
+      <div class="card-body">
+        <h5 class="card-title">Метод Шарра</h5>
+        <p class="card-text">Шарр используется для обнаружения вторых производных изображения в горизонтальном и вертикальном направлениях.</p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+    <div class="card">
+        <img id="image_sobel" class="card-img-top" alt="..." src="{{ url_for('get_image4') }}" />
+        <div class="card-body">
+          <h5 class="card-title">Метод Собеля</h5>
+          <p class="card-text">С помощью данного метода можно обнаружить края изображения в горизонтальном и вертикальном направлениях.</p>
+          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        </div>
+      </div>
+  </div>
+  <!--  -->
+  <form method="POST" action="">
+  <div class="d-grid gap-2">
+    <button type="submit" class="btn btn-primary" type="button">Сделать снимок</button>
+  </div>
+
+<script src="/static/js/update.js"></script>
+
+
+
+    <!-- <img src="{{ image1 }}" alt="Картинка">
+    <img src="{{ image2 }}" alt="Картинка">
+    <img src="{{ image3 }}" alt="Картинка">
+    <img src="{{ image4 }}" alt="Картинка">
+    <p>{{ caption }}</p> -->
+
+
+
+    
+</body>
+</html>
